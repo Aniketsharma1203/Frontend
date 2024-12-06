@@ -83,7 +83,7 @@ export const Main = () => {
         {/* Current Song */}
         <div>
           {currentSongIndex !== null ? (
-            <div className="flex justify-center my-10 w-60">
+            <div className="flex justify-center my-10 w-full">
               <img
                 src={`https://music-app-backend-6kai.onrender.com${songs[currentSongIndex].imageUrl}`}
                 alt="song-logo"
