@@ -14,7 +14,7 @@ export const Main = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/getmusic')
+      .get('https://music-app-backend-6kai.onrender.com/getmusic')
       .then((response) => {
         setSongs(response.data);
       })
@@ -44,7 +44,7 @@ export const Main = () => {
     if (currentSongIndex !== null) {
       const nextIndex = (currentSongIndex + 1) % songs.length;
       setCurrentSongIndex(nextIndex);
-      callMySound(`http://localhost:4000${songs[nextIndex].audioUrl}`);
+      callMySound(`https://music-app-backend-6kai.onrender.com${songs[nextIndex].audioUrl}`);
     }
   };
 
@@ -52,7 +52,7 @@ export const Main = () => {
     if (currentSongIndex !== null) {
       const prevIndex = (currentSongIndex - 1 + songs.length) % songs.length;
       setCurrentSongIndex(prevIndex);
-      callMySound(`http://localhost:4000${songs[prevIndex].audioUrl}`);
+      callMySound(`https://music-app-backend-6kai.onrender.com${songs[prevIndex].audioUrl}`);
     }
   };
 
@@ -85,7 +85,7 @@ export const Main = () => {
           {currentSongIndex !== null ? (
             <div className="flex justify-center my-10 w-full">
               <img
-                src={`http://localhost:4000${songs[currentSongIndex].imageUrl}`}
+                src={`https://music-app-backend-6kai.onrender.com${songs[currentSongIndex].imageUrl}`}
                 alt="song-logo"
                 className="rounded-xl w-64 lg:w-80 xl:w-96"
               />
@@ -111,14 +111,14 @@ export const Main = () => {
                 className="flex justify-between items-center cursor-pointer hover:bg-[#6a0000] hover:p-1"
                 onClick={() => {
                   setCurrentSongIndex(index);
-                  callMySound(`http://localhost:4000${song.audioUrl}`);
+                  callMySound(`https://music-app-backend-6kai.onrender.com${song.audioUrl}`);
                 }}
               >
                 <div className="flex gap-4 items-center">
                   <h3 className="text-lg font-semibold text-green-500">{index + 1}</h3>
                   {song.imageUrl && (
                     <img
-                      src={`http://localhost:4000${song.imageUrl}`}
+                      src={`https://music-app-backend-6kai.onrender.com${song.imageUrl}`}
                       alt={song.name}
                       className="w-10 h-10 rounded-full"
                     />
@@ -147,7 +147,7 @@ export const Main = () => {
             <div className="flex flex-col gap-4 text-sm md:text-base">
               <p>Now Playing</p>
               <img
-                src={`http://localhost:4000${songs[currentSongIndex].imageUrl}`}
+                src={`https://music-app-backend-6kai.onrender.com${songs[currentSongIndex].imageUrl}`}
                 alt="song-logo"
                 className="rounded-xl w-40 lg:w-64 xl:w-80"
               />
